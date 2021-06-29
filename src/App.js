@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello world
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	method = () => {
+		return "Mymethod test";
+	};
+	render() {
+		const name = "John Doe";
+		const loading = false;
+		const foo = () => "foo...";
+		if (loading) {
+			return <h1>Loading...</h1>;
+		}
+		return (
+			<div className='App'>
+				<h1 className='text-center'>
+					{" "}
+					{name} {foo()}
+				</h1>
+				<p className='text-center'> {this.method().toUpperCase()}</p>
+				{/* <button className='btn btn-primary'>Button</button> */}
+			</div>
+		);
+	}
 }
 
 export default App;
